@@ -1,6 +1,5 @@
-
-
 const fs = require('fs');
+
 
 
 let listadoPorHacer = [];
@@ -26,6 +25,13 @@ const crear = (descripcion) => {
     return porHacer;
 }
 
+
+const getListado = () => {
+
+    cargarDB();
+    return listadoPorHacer;
+}
+
 const cargarDB = () => {
     try {
         listadoPorHacer = require('../db/data.json');
@@ -40,5 +46,6 @@ const cargarDB = () => {
 
 module.exports = {
     crear,
+    getListado
 
 }
